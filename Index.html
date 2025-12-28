@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DevBlzAlphaK1dXD about</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg"></div>
+
+  <!-- Card -->
+  <div class="card">
+
+    <!-- Header (top-left in card) -->
+    <div class="header">
+      <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=4de9089e&x-expires=1767078000&x-signature=jyH3ahbJb1Rz6sCUbHC3P1aiPTU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2" alt="avatar">
+      <div class="info">
+        <h2>DevBlz</h2>
+        <p>Developer × Designer × Content creator</p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <a class="btn" href="https://github.com" target="_blank">TikTok</a>
+      <a class="btn" href="https://roblox.com" target="_blank">Facebook</a>
+      <a class="btn" href="https://discord.com" target="_blank">Roblox</a>
+    </div>
+
+  </div>
+
+  <!-- JS: gradient theo chuột TRONG button -->
+  <script>
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("mousemove", e => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        btn.style.setProperty("--x", `${x}px`);
+        btn.style.setProperty("--y", `${y}px`);
+      });
+
+      btn.addEventListener("mouseleave", () => {
+        btn.style.setProperty("--x", `50%`);
+        btn.style.setProperty("--y", `50%`);
+      });
+    });
+  </script>
+
+</body>
+</html>
