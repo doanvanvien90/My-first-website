@@ -1,49 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>404 Not Found</title>
+  <meta charset="UTF-8" />
+  <title>DevBlzAlphaK1dXD</title>
+
   <style>
-    * { box-sizing: border-box; font-family:"Segoe UI", system-ui, sans-serif; }
-    body {
-      margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
-      overflow:hidden; background:#05060a;
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", system-ui, sans-serif;
     }
-    /* Soul Fire Background */
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #05060a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* 🔥 Blue Soul Fire Background */
     .bg {
-      position:fixed; inset:0;
+      position: fixed;
+      inset: 0;
       background:
         radial-gradient(circle at 20% 30%, #00aaff55, transparent 45%),
         radial-gradient(circle at 80% 70%, #0033ff55, transparent 45%),
         radial-gradient(circle at center, #020416, #000);
-      filter:blur(50px);
-      z-index:-1;
+      filter: blur(50px);
+      z-index: -1;
     }
-    /* Card */
+
+    /* 🃏 Card */
     .card {
-      width:360px; padding:20px; border-radius:18px;
-      background: rgba(10,15,30,0.88); backdrop-filter:blur(12px);
-      box-shadow:0 0 40px #0088ff66,0 0 90px #0022ff33;
-      text-align:center;
+      width: 360px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(10, 15, 30, 0.88);
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 0 40px #0088ff66,
+        0 0 90px #0022ff33;
     }
-    h1 { color:#00ccff; font-size:50px; margin:0 0 10px 0; }
-    p { color:#7fbfff; margin:0 0 20px 0; }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .header img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px; /* rounded square */
+      box-shadow: 0 0 20px #00aaffaa;
+    }
+
+    .info h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #eaf6ff;
+    }
+
+    .info p {
+      margin: 0;
+      font-size: 13px;
+      color: #7fbfff;
+    }
+
     /* Buttons */
-    .buttons { display:flex; flex-direction:column; gap:14px; margin-top:12px; }
-    .btn {
-      --x:50%; --y:50%;
-      padding:14px; text-decoration:none; color:white; font-weight:500;
-      border-radius:14px; text-align:center;
-      background: radial-gradient(180px circle at var(--x) var(--y), #00ccff, #0044ff, #020417);
-      box-shadow: 0 0 22px #00aaff55, inset 0 0 12px #00ccff44;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
-    .btn:hover { transform:translateY(-2px) scale(1.03); box-shadow:0 0 35px #00ccffaa, inset 0 0 18px #00ccff66; }
-    /* Cursor glow */
+
+    .btn {
+      --x: 50%;
+      --y: 50%;
+
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      border-radius: 14px;
+
+      background:
+        radial-gradient(
+          180px circle at var(--x) var(--y),
+          #00ccff,
+          #0044ff,
+          #020417
+        );
+
+      box-shadow:
+        0 0 22px #00aaff55,
+        inset 0 0 12px #00ccff44;
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow:
+        0 0 35px #00ccffaa,
+        inset 0 0 18px #00ccff66;
+    }
+
+    /* 🖱️ Cursor glow */
     body::after {
-      content:""; position:fixed; width:120px; height:120px; pointer-events:none;
-      background:radial-gradient(circle,#00aaff55,transparent 70%); filter:blur(22px);
-      transform:translate(-50%,-50%); left:50%; top:50%;
+      content: "";
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      pointer-events: none;
+      background: radial-gradient(circle, #00aaff55, transparent 70%);
+      filter: blur(22px);
+      transform: translate(-50%, -50%);
+      left: var(--cx, 50%);
+      top: var(--cy, 50%);
     }
   </style>
 </head>
@@ -52,17 +133,25 @@
   <div class="bg"></div>
 
   <div class="card">
-    <h1>404</h1>
-    <p>Page not found! Oops 😅</p>
+    <div class="header">
+      <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg" alt="avatar">
+      <div class="info">
+        <h2>DevBlz</h2>
+        <p>Developer × Designer × Content creator</p>
+      </div>
+    </div>
+
     <div class="buttons">
-      <a class="btn" href="https://www.githubstatus.com/" target="_blank">GitHub Status 1</a>
-      <a class="btn" href="https://www.x.com/@githubstatus/" target="_blank">@GitHubstatus 2</a>
-      <a class="btn" href="https://beacons.ai/devblzalphak1dxd" target="_blank">Use beacons.ai instead.</a>
+      <a class="btn" href="https://tiktok.com" target="_blank">TikTok</a>
+      <a class="btn" href="https://facebook.com" target="_blank">Facebook</a>
+      <a class="btn" href="https://roblox.com" target="_blank">Roblox</a>
     </div>
   </div>
 
+  <!-- JS: gradient theo chuột TRONG button -->
   <script>
     const buttons = document.querySelectorAll(".btn");
+
     buttons.forEach(btn => {
       btn.addEventListener("mousemove", e => {
         const rect = btn.getBoundingClientRect();
@@ -71,9 +160,10 @@
         btn.style.setProperty("--x", `${x}px`);
         btn.style.setProperty("--y", `${y}px`);
       });
+
       btn.addEventListener("mouseleave", () => {
-        btn.style.setProperty("--x", `50%`);
-        btn.style.setProperty("--y", `50%`);
+        btn.style.setProperty("--x", "50%");
+        btn.style.setProperty("--y", "50%");
       });
     });
   </script>
