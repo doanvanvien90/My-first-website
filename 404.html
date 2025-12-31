@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DevBlzAlphaK1dXD</title>
 
   <style>
@@ -55,7 +56,7 @@
     .header img {
       width: 56px;
       height: 56px;
-      border-radius: 14px; /* rounded square */
+      border-radius: 14px;
       box-shadow: 0 0 20px #00aaffaa;
     }
 
@@ -81,7 +82,6 @@
     .btn {
       --x: 50%;
       --y: 50%;
-
       padding: 14px;
       text-align: center;
       text-decoration: none;
@@ -101,9 +101,7 @@
         0 0 22px #00aaff55,
         inset 0 0 12px #00ccff44;
 
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn:hover {
@@ -126,6 +124,34 @@
       left: var(--cx, 50%);
       top: var(--cy, 50%);
     }
+
+    /* 📱 MOBILE SCALE UP */
+    @media (max-width: 480px) {
+      .card {
+        width: 92vw;
+        padding: 26px;
+        border-radius: 22px;
+      }
+      .header img {
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
+      }
+      .info h2 {
+        font-size: 22px;
+      }
+      .info p {
+        font-size: 15px;
+      }
+      .buttons {
+        gap: 18px;
+      }
+      .btn {
+        padding: 18px;
+        font-size: 17px;
+        border-radius: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -134,7 +160,7 @@
 
   <div class="card">
     <div class="header">
-      <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=b63acb19&x-expires=1767182400&x-signature=rmyDiRWBSpbumon0rWuW5tUsV04%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2" alt="avatar">
+      <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg" alt="avatar">
       <div class="info">
         <h2>DevBlzAlphaK1dXD</h2>
         <p>Developer × Designer × Content creator</p>
@@ -148,28 +174,26 @@
     </div>
   </div>
 
-  <!-- JS: gradient theo chuột TRONG button -->
   <script>
-    const buttons = document.querySelectorAll(".btn");
-
-    buttons.forEach(btn => {
+    /* Gradient theo chuột trong button */
+    document.querySelectorAll(".btn").forEach(btn => {
       btn.addEventListener("mousemove", e => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        btn.style.setProperty("--x", `${x}px`);
-        btn.style.setProperty("--y", `${y}px`);
+        const r = btn.getBoundingClientRect();
+        btn.style.setProperty("--x", `${e.clientX - r.left}px`);
+        btn.style.setProperty("--y", `${e.clientY - r.top}px`);
       });
-
       btn.addEventListener("mouseleave", () => {
         btn.style.setProperty("--x", "50%");
         btn.style.setProperty("--y", "50%");
       });
     });
+
+    /* Cursor glow follow */
+    document.addEventListener("mousemove", e => {
+      document.body.style.setProperty("--cx", e.clientX + "px");
+      document.body.style.setProperty("--cy", e.clientY + "px");
+    });
   </script>
 
 </body>
 </html>
-
-
-
