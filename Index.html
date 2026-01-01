@@ -16,9 +16,11 @@
       height: 100vh;
       background: #05060a;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      gap: 18px; /* 👈 cách card với thanh dưới */
     }
 
     /* 🔥 Blue Soul Fire Background */
@@ -88,6 +90,7 @@
       color: white;
       font-weight: 500;
       border-radius: 14px;
+      cursor: pointer;
 
       background:
         radial-gradient(
@@ -111,6 +114,39 @@
         inset 0 0 18px #00ccff66;
     }
 
+    /* 🔽 Bottom bar */
+    .bottom-bar {
+      width: 360px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .bottom-btn {
+      flex: 1;
+      padding: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #eaf6ff;
+      font-size: 14px;
+      border-radius: 14px;
+
+      background: rgba(10, 15, 30, 0.75);
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 0 20px #0077ff55,
+        inset 0 0 10px #00aaff33;
+
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .bottom-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow:
+        0 0 30px #00aaffaa,
+        inset 0 0 14px #00ccff66;
+    }
+
     /* 🖱️ Cursor glow */
     body::after {
       content: "";
@@ -125,31 +161,11 @@
       top: var(--cy, 50%);
     }
 
-    /* 📱 MOBILE SCALE UP */
+    /* 📱 Mobile */
     @media (max-width: 480px) {
-      .card {
+      .card,
+      .bottom-bar {
         width: 92vw;
-        padding: 26px;
-        border-radius: 22px;
-      }
-      .header img {
-        width: 72px;
-        height: 72px;
-        border-radius: 18px;
-      }
-      .info h2 {
-        font-size: 22px;
-      }
-      .info p {
-        font-size: 15px;
-      }
-      .buttons {
-        gap: 18px;
-      }
-      .btn {
-        padding: 18px;
-        font-size: 17px;
-        border-radius: 18px;
       }
     }
   </style>
@@ -160,6 +176,7 @@
 
   <div class="card">
     <div class="header">
+      <!-- ❗ Avatar giữ nguyên link như m dặn -->
       <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=9ab849e6&x-expires=1767337200&x-signature=quD%2F2RhItvXjD6WTqtefcTdM0gI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt="avatar">
       <div class="info">
         <h2>DevBlzAlphaK1dXD</h2>
@@ -174,8 +191,13 @@
     </div>
   </div>
 
+  <!-- 🔽 Thanh dưới -->
+  <div class="bottom-bar">
+    <a class="bottom-btn" href="#">FAQ</a>
+    <a class="bottom-btn" href="#">Software (PC)</a>
+  </div>
+
   <script>
-    /* Gradient theo chuột trong button */
     document.querySelectorAll(".btn").forEach(btn => {
       btn.addEventListener("mousemove", e => {
         const r = btn.getBoundingClientRect();
@@ -188,7 +210,6 @@
       });
     });
 
-    /* Cursor glow follow */
     document.addEventListener("mousemove", e => {
       document.body.style.setProperty("--cx", e.clientX + "px");
       document.body.style.setProperty("--cy", e.clientY + "px");
@@ -197,4 +218,3 @@
 
 </body>
 </html>
-
