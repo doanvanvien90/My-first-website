@@ -76,7 +76,7 @@ body{
   color:#7fbfff;
 }
 
-/* Buttons area */
+/* Buttons */
 .links{
   display:flex;
   flex-direction:column;
@@ -114,7 +114,7 @@ body{
     inset 0 0 18px #00ccff66;
 }
 
-/* 🔽 Nav */
+/* 🔽 NAV */
 .nav{
   width:420px;
   display:flex;
@@ -170,7 +170,7 @@ body::after{
 <!-- HOME CARD -->
 <div class="card">
   <div class="header">
-    <!-- 🔁 AVATAR CŨ -->
+    <!-- 🔒 Avatar GIỮ NGUYÊN -->
     <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d379fbd3492bfe5bc1ab2df568151ca2~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=9ab849e6&x-expires=1767337200&x-signature=quD%2F2RhItvXjD6WTqtefcTdM0gI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt="avatar">
     <div>
       <h2>DevBlzAlphaK1dXD</h2>
@@ -178,7 +178,7 @@ body::after{
     </div>
   </div>
 
-  <!-- 🔗 3 NÚT (thay FAQ text) -->
+  <!-- 3 NÚT -->
   <div class="links">
     <a class="link-btn" href="https://www.tiktok.com/@dbakd_01" target="_blank">TikTok</a>
     <a class="link-btn" href="https://www.facebook.com/devblzalphak1dxd/" target="_blank">Facebook</a>
@@ -193,14 +193,21 @@ body::after{
 </div>
 
 <script>
+/* Gradient theo chuột + reset khi rời */
 document.querySelectorAll(".link-btn").forEach(btn=>{
   btn.addEventListener("mousemove",e=>{
-    const r=btn.getBoundingClientRect();
-    btn.style.setProperty("--x",`${e.clientX-r.left}px`);
-    btn.style.setProperty("--y",`${e.clientY-r.top}px`);
+    const r = btn.getBoundingClientRect();
+    btn.style.setProperty("--x",`${e.clientX - r.left}px`);
+    btn.style.setProperty("--y",`${e.clientY - r.top}px`);
+  });
+
+  btn.addEventListener("mouseleave",()=>{
+    btn.style.setProperty("--x","50%");
+    btn.style.setProperty("--y","50%");
   });
 });
 
+/* Cursor glow */
 document.addEventListener("mousemove",e=>{
   document.body.style.setProperty("--cx",e.clientX+"px");
   document.body.style.setProperty("--cy",e.clientY+"px");
