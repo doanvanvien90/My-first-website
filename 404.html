@@ -36,7 +36,7 @@ body{
   z-index:-1;
 }
 
-/* 🔽 NAV – FRAME RIÊNG, Ở TRÊN CARD */
+/* 🔽 NAV */
 .nav{
   width:420px;
   display:flex;
@@ -90,7 +90,8 @@ body{
 .header img{
   width:58px;
   height:58px;
-  border-radius:16px;
+  border-radius:16px; /* giữ bo như cũ */
+  object-fit:cover;
   box-shadow:0 0 22px #00aaffaa;
 }
 
@@ -168,16 +169,14 @@ body::after{
 <body>
 <div class="bg"></div>
 
-<!-- NAV (TRÊN CARD – FRAME RIÊNG) -->
 <div class="nav">
   <a href="https://doanvanvien90.github.io/FAQ/">FAQ</a>
   <a href="/software/">Software (PC)</a>
 </div>
 
-<!-- HOME CARD -->
 <div class="card">
   <div class="header">
-    <img src="https://lh3.googleusercontent.com/a-/ALV-UjVeURjcEdvLlCK9da52zr_cPmg96cFbx8jDy_DIgIH53-xFPgUOJTtuQ-KoLHaou6_gAtLMuW2QBg63pq8HGb2yi2uvoEjUBrDevZQivXHngQkNxlZWr6paBS3afHogIyEKDDox9zc8EBLkYL3ymJ3pGwQbb4hYtKgxExYhfOtk7noCGE3qRzOXRw1qjqdQH7JxLA9x5EFuExSiSloiwsTA-DFdvOyp23DoSEYo53fuRsvWIgSVbhTFo_rt2sAuDnWWu2F9hXCIixUG77eDueH6zFnpXL75TNTGwb1DUVNu_qSfz8Afisl_tkZ23w7yUMX0r1fNPYD1sonWBruJneIxx8qx5n5fHQ5Jr4w_I2ljBRNwBdwIS9XFJ4NT8YSfIyxhBjiQBVZ_50NrIcXnymznTyIYEP7JvuzNFmsiyI-kW5XBJUAzS4gY7W4JRQqJY2AsQoUhcNXDx73ycx5KmgF179HWCBti9M6C1ttEn2lS7LMZGS6O3NkJQQOL0hEM65W9pdom7SWURlOtsnE3GuJFd-qd08R7P-7zxNX0f6P_PflAdW5nxOOY5DOW0Ii5dP-7_rg8tJqKzqPBowzptqy8kHuYqKyOHxTkCMz4XGaf_jTrFpFXyzRPp3xa6kqPgzeRwta6P6uJD8qnox-jU4CVljKXEl-OrMEjXHjkNrN5gKx04hrmCuaOaSXoZVK1w-bcnaJcY3SJA991jwvcemo5a-nxq3H0RwyEL6rMEVRyuPCZcuQs9DBpvFjCl2MS_sqlNjm8CA8GXk-VpG8PZ5c_J2iFqSB53MBPieEJ-d3J-OU_P65-1Yjwm5i34JSnr0dVKD0a-CKgF17Iq9Eklo6ErybojrU78LeWoS2KqSUchoqucvKbvtmfHPPeWg3hxiqo3NQ19xkn-KX7OIp_Ncwq5WnTxpcxKAV-t9HqgSQhj8eewZM2It_LmjapN3qxS5XnXVK_GNS8QGzB4ddfitbYAZwerW7WIQOBxucsOlfW1OL86FDYYtSlir8ZSPlQTa2QlyXXXGjRpyXF0td_p1tLkTNpTKOjXYlf2WqFO8r17TjOd2HeXC0=s432-c-no" alt="avatar">
+    <img src="/pfp.png" alt="avatar">
     <div>
       <h2>DevBlzAlphaK1dXD</h2>
       <p>Developer × Designer × Content creator</p>
@@ -188,7 +187,7 @@ body::after{
     <a class="link-btn" href="https://www.tiktok.com/@dbakd_01" target="_blank">TikTok</a>
     <a class="link-btn" href="https://www.facebook.com/devblzalphak1dxd/" target="_blank">Facebook</a>
     <a class="link-btn" href="https://www.roblox.com/users/7293366484/profile" target="_blank">Roblox</a>
-    <a class="link-btn" href="https://discord.com/invite/EAS427E8uH" target="_blank">Discord(DevBlz Team)</a>
+    <a class="link-btn" href="https://discord.com/invite/EAS427E8uH" target="_blank">Discord (DevBlz Team)</a>
   </div>
 </div>
 
@@ -212,4 +211,3 @@ document.addEventListener("mousemove",e=>{
 </script>
 </body>
 </html>
-
