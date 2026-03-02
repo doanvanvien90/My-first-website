@@ -9,6 +9,12 @@
 *{
   box-sizing:border-box;
   font-family:"Segoe UI",system-ui,sans-serif;
+  scroll-behavior:smooth;
+}
+
+/* luôn có scroll dọc */
+html{
+  overflow-y:scroll;
 }
 
 body{
@@ -19,8 +25,8 @@ body{
   flex-direction:column;
   align-items:center;
   gap:18px;
-  padding-top:40px;
-  overflow:hidden;
+  padding:40px 0;
+  overflow-x:hidden;
 }
 
 /* Background */
@@ -28,11 +34,35 @@ body{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 30%, #00aaff55, transparent 45%),
-    radial-gradient(circle at 80% 70%, #0033ff55, transparent 45%),
+    radial-gradient(circle at 20% 30%, #00aaff33, transparent 45%),
+    radial-gradient(circle at 80% 70%, #0033ff33, transparent 45%),
     radial-gradient(circle at center, #020416, #000);
   filter:blur(50px);
   z-index:-1;
+}
+
+/* SIMPLE DARK SCROLLBAR */
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#0b0f18;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#2a3245;
+  border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#3a4460;
+}
+
+/* Firefox */
+*{
+  scrollbar-width:thin;
+  scrollbar-color:#2a3245 #0b0f18;
 }
 
 /* NAV */
@@ -51,13 +81,12 @@ body{
   border-radius:14px;
   background:rgba(10,15,30,.75);
   backdrop-filter:blur(10px);
-  box-shadow:0 0 20px #0077ff55, inset 0 0 10px #00aaff33;
+  box-shadow:0 0 20px #0077ff33, inset 0 0 10px #00aaff22;
   transition:.15s ease;
 }
 
 .nav a:hover{
   transform:translateY(-2px) scale(1.05);
-  box-shadow:0 0 32px #00aaffaa, inset 0 0 16px #00ccff66;
 }
 
 /* CARD */
@@ -67,7 +96,7 @@ body{
   border-radius:20px;
   background:rgba(10,15,30,.88);
   backdrop-filter:blur(14px);
-  box-shadow:0 0 45px #0088ff66, 0 0 100px #0022ff33;
+  box-shadow:0 0 45px #0088ff33, 0 0 100px #0022ff22;
   display:flex;
   flex-direction:column;
   gap:20px;
@@ -85,7 +114,7 @@ body{
   height:58px;
   border-radius:16px;
   object-fit:cover;
-  box-shadow:0 0 22px #00aaffaa;
+  box-shadow:0 0 16px #00aaff55;
 }
 
 .header h2{
@@ -106,7 +135,7 @@ body{
   flex-direction:column;
   gap:16px;
   padding-top:10px;
-  border-top:1px solid #00aaff33;
+  border-top:1px solid #00aaff22;
 }
 
 .link-btn{
@@ -121,25 +150,19 @@ body{
   background:
     radial-gradient(180px circle at var(--x) var(--y),
     #00ccff, #0044ff, #020417);
-  box-shadow:0 0 22px #00aaff55, inset 0 0 12px #00ccff44;
+  box-shadow:0 0 18px #00aaff33, inset 0 0 10px #00ccff22;
   transition:.15s ease;
 }
 
 .link-btn:hover{
   transform:translateY(-2px) scale(1.04);
-  box-shadow:0 0 36px #00ccffaa, inset 0 0 18px #00ccff66;
 }
 
-/* EMAIL RIÊNG */
+/* EMAIL */
 .email-btn{
   background:
     radial-gradient(180px circle at var(--x) var(--y),
     #ffd000, #ff8800, #020417);
-  box-shadow:0 0 22px #ffaa0055, inset 0 0 12px #ffbb0044;
-}
-
-.email-btn:hover{
-  box-shadow:0 0 40px #ffcc00aa, inset 0 0 20px #ffbb0066;
 }
 
 .email-text{
@@ -154,7 +177,7 @@ body::after{
   width:120px;
   height:120px;
   pointer-events:none;
-  background:radial-gradient(circle,#00aaff55,transparent 70%);
+  background:radial-gradient(circle,#00aaff33,transparent 70%);
   filter:blur(22px);
   transform:translate(-50%,-50%);
   left:var(--cx,50%);
@@ -188,15 +211,14 @@ body::after{
   </div>
 
   <div class="links">
-    <a class="link-btn" href="https://www.tiktok.com/@dbakd_01" target="_blank" rel="noopener noreferrer">TikTok</a>
-    <a class="link-btn" href="https://www.facebook.com/devblzalphak1dxd/" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a class="link-btn" href="https://www.roblox.com/users/7293366484/profile" target="_blank" rel="noopener noreferrer">Roblox</a>
-    <a class="link-btn" href="https://discord.com/invite/EAS427E8uH" target="_blank" rel="noopener noreferrer">Discord (DevBlz Team)</a>
+    <a class="link-btn" href="https://www.tiktok.com/@dbakd_01" target="_blank">TikTok</a>
+    <a class="link-btn" href="https://www.facebook.com/devblzalphak1dxd/" target="_blank">Facebook</a>
+    <a class="link-btn" href="https://www.roblox.com/users/7293366484/profile" target="_blank">Roblox</a>
+    <a class="link-btn" href="https://discord.com/invite/EAS427E8uH" target="_blank">Discord (DevBlz Team)</a>
 
     <a class="link-btn email-btn"
        href="mailto:doanvien909@gmail.com"
-       target="_blank"
-       rel="noopener noreferrer">
+       target="_blank">
        Contact via Email<br>
        <span class="email-text">doanvien909@gmail.com</span>
     </a>
