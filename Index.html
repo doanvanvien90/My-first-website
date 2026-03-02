@@ -17,14 +17,13 @@ body{
   background:#05060a;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
   align-items:center;
-  overflow:hidden;
   gap:18px;
   padding-top:40px;
+  overflow:hidden;
 }
 
-/* 🔥 BG */
+/* Background */
 .bg{
   position:fixed;
   inset:0;
@@ -36,7 +35,7 @@ body{
   z-index:-1;
 }
 
-/* 🔽 NAV – FRAME RIÊNG, Ở TRÊN CARD */
+/* NAV */
 .nav{
   width:420px;
   display:flex;
@@ -52,35 +51,29 @@ body{
   border-radius:14px;
   background:rgba(10,15,30,.75);
   backdrop-filter:blur(10px);
-  box-shadow:
-    0 0 20px #0077ff55,
-    inset 0 0 10px #00aaff33;
+  box-shadow:0 0 20px #0077ff55, inset 0 0 10px #00aaff33;
   transition:.15s ease;
 }
 
 .nav a:hover{
   transform:translateY(-2px) scale(1.05);
-  box-shadow:
-    0 0 32px #00aaffaa,
-    inset 0 0 16px #00ccff66;
+  box-shadow:0 0 32px #00aaffaa, inset 0 0 16px #00ccff66;
 }
 
-/* 🃏 Card */
+/* CARD */
 .card{
   width:420px;
   padding:22px;
   border-radius:20px;
   background:rgba(10,15,30,.88);
   backdrop-filter:blur(14px);
-  box-shadow:
-    0 0 45px #0088ff66,
-    0 0 100px #0022ff33;
+  box-shadow:0 0 45px #0088ff66, 0 0 100px #0022ff33;
   display:flex;
   flex-direction:column;
   gap:20px;
 }
 
-/* Header */
+/* HEADER */
 .header{
   display:flex;
   align-items:center;
@@ -91,6 +84,7 @@ body{
   width:58px;
   height:58px;
   border-radius:16px;
+  object-fit:cover;
   box-shadow:0 0 22px #00aaffaa;
 }
 
@@ -106,7 +100,7 @@ body{
   color:#7fbfff;
 }
 
-/* Buttons */
+/* LINKS */
 .links{
   display:flex;
   flex-direction:column;
@@ -125,26 +119,35 @@ body{
   font-weight:500;
   border-radius:16px;
   background:
-    radial-gradient(
-      180px circle at var(--x) var(--y),
-      #00ccff,
-      #0044ff,
-      #020417
-    );
-  box-shadow:
-    0 0 22px #00aaff55,
-    inset 0 0 12px #00ccff44;
+    radial-gradient(180px circle at var(--x) var(--y),
+    #00ccff, #0044ff, #020417);
+  box-shadow:0 0 22px #00aaff55, inset 0 0 12px #00ccff44;
   transition:.15s ease;
 }
 
 .link-btn:hover{
   transform:translateY(-2px) scale(1.04);
-  box-shadow:
-    0 0 36px #00ccffaa,
-    inset 0 0 18px #00ccff66;
+  box-shadow:0 0 36px #00ccffaa, inset 0 0 18px #00ccff66;
 }
 
-/* 🖱 Cursor glow */
+/* EMAIL RIÊNG */
+.email-btn{
+  background:
+    radial-gradient(180px circle at var(--x) var(--y),
+    #ffd000, #ff8800, #020417);
+  box-shadow:0 0 22px #ffaa0055, inset 0 0 12px #ffbb0044;
+}
+
+.email-btn:hover{
+  box-shadow:0 0 40px #ffcc00aa, inset 0 0 20px #ffbb0066;
+}
+
+.email-text{
+  font-size:13px;
+  opacity:.85;
+}
+
+/* Cursor glow */
 body::after{
   content:"";
   position:fixed;
@@ -158,7 +161,7 @@ body::after{
   top:var(--cy,50%);
 }
 
-/* 📱 Mobile */
+/* Mobile */
 @media(max-width:480px){
   .card,.nav{width:92vw;}
 }
@@ -166,38 +169,47 @@ body::after{
 </head>
 
 <body>
+
 <div class="bg"></div>
 
-<!-- NAV (TRÊN CARD – FRAME RIÊNG) -->
 <div class="nav">
   <a href="https://doanvanvien90.github.io/FAQ/">FAQ</a>
   <a href="https://doanvanvien90.github.io/software-pc/">Software (PC)</a>
 </div>
 
-<!-- HOME CARD -->
 <div class="card">
+
   <div class="header">
-    <img src="https://lh3.googleusercontent.com/a-/ALV-UjW8PBINExrAuS3hyQxkQzsG3V15uRu6M1iTdn9VgaAZy5xmh6Zp3uGxEESZLvRTF8u5AsrlTNzVbLvGeH6hYTkMBwzmO4vAczynCk74pZkeNYHYMWUMgn1pZ0SMYJoYEqgYueGf_B30jrFmspE9RcIkU00j68MRqMVe5ZAx7ngKXQRqr1zSmC7X-NT6qL7TP1ECRQLUlaCW6o191Ezlh_jEZG7msq1ipxSeDsi8AWH4CLBn4rZWHIOmVuyjvmHBXxOu-18CjNeHso3eh_DlFGS9tufA_prcZmDKnLtTyAoIUP0GfEVV6NElvB7-eYIkI2s4f3bBWzLZSMdkBZ8ebF7wO0Yj5kIV2vXcfYOuMRpT3fYhzp_7n7a62-N8uIIBOEmYpNp5W78sk-w-9CTmnYelav0v820APkMQkxWclhluQa53mbsTDtMXAmW8gklr6nulw3e4YgLyc9760_WYW45BIVqRZjDgFTTT4aDs86A3pJt08LnZGUEeaeBT-gRfvIM1rj0lKxdCLwvQvC_M0vD3QMhPT2rDD7hr9wWIBiC3fCKCJoljTuTwx43IPkgHS-uxbaGus1o7abkFsJLOoTZdJWxWnALZqTfpiAsHSPHAD6AdkJST6rACnQDFJyQh95XY3ajL8CGVE9_wMgmoLHHqnUkKOyAkkg-dO5DXfqQBcVK3xrIkda0P8b5zpzJCPEQ6Btzboh2ChkAqQP1aQoAUL684Lb3O8qFK0bMGUjztryD__Bi3Ryi70mpqG-iXBvJWm3oOSsaWgtY4LIE5ZrSZnf92J2fX2h-LjiIVk6gsBVQ-5_5-KeXgjaP7naDomoKi6wiofmLlKdQ8qBWr4cncJrp2cYIxQxTDoPJvdR_uLsgo06Ipy7uiFiTzYOix_Id0noElWShUtHpiyvo215pNlE3aCCN8eHouRrX37dqiPbHiy0XA7xLMRykW8iKMltl-3lhXmSoCc5z5dM703IfC1Q1XnqjZQYcf0rCpESGstjPNM39k1dAoMU-fxfmEq5XSIQTx9_kPcxn7jCFgW8N6MybaldAQVyIQkcqgCeldyGnh0ol8faE=s432-c-no" alt="avatar">
+    <img src="https://avatars.githubusercontent.com/doanvanvien90" alt="avatar">
     <div>
       <h2>DevBlzAlphaK1dXD</h2>
-      <p>Developer × Designer × Content creator</p>
+      <p>Developer × Designer × Content Creator</p>
     </div>
   </div>
 
   <div class="links">
-    <a class="link-btn" href="https://www.tiktok.com/@dbakd_01" target="_blank">TikTok</a>
-    <a class="link-btn" href="https://www.facebook.com/devblzalphak1dxd/" target="_blank">Facebook</a>
-    <a class="link-btn" href="https://www.roblox.com/users/7293366484/profile" target="_blank">Roblox</a>
-    <a class="link-btn" href="https://discord.com/invite/EAS427E8uH" target="_blank">Discord(DevBlz Team)</a>
+    <a class="link-btn" href="https://www.tiktok.com/@dbakd_01" target="_blank" rel="noopener noreferrer">TikTok</a>
+    <a class="link-btn" href="https://www.facebook.com/devblzalphak1dxd/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="link-btn" href="https://www.roblox.com/users/7293366484/profile" target="_blank" rel="noopener noreferrer">Roblox</a>
+    <a class="link-btn" href="https://discord.com/invite/EAS427E8uH" target="_blank" rel="noopener noreferrer">Discord (DevBlz Team)</a>
+
+    <a class="link-btn email-btn"
+       href="mailto:doanvien909@gmail.com"
+       target="_blank"
+       rel="noopener noreferrer">
+       Contact via Email<br>
+       <span class="email-text">doanvien909@gmail.com</span>
+    </a>
   </div>
+
 </div>
 
 <script>
 document.querySelectorAll(".link-btn").forEach(btn=>{
   btn.addEventListener("mousemove",e=>{
     const r = btn.getBoundingClientRect();
-    btn.style.setProperty("--x",`${e.clientX - r.left}px`);
-    btn.style.setProperty("--y",`${e.clientY - r.top}px`);
+    btn.style.setProperty("--x",(e.clientX - r.left)+"px");
+    btn.style.setProperty("--y",(e.clientY - r.top)+"px");
   });
   btn.addEventListener("mouseleave",()=>{
     btn.style.setProperty("--x","50%");
@@ -210,8 +222,6 @@ document.addEventListener("mousemove",e=>{
   document.body.style.setProperty("--cy",e.clientY+"px");
 });
 </script>
+
 </body>
 </html>
-
-
-
