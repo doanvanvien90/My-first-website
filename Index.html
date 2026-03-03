@@ -12,7 +12,6 @@
   scroll-behavior:smooth;
 }
 
-/* luôn có scroll dọc */
 html{
   overflow-y:scroll;
 }
@@ -29,7 +28,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Background */
 .bg{
   position:fixed;
   inset:0;
@@ -41,31 +39,19 @@ body{
   z-index:-1;
 }
 
-/* SIMPLE DARK SCROLLBAR */
-::-webkit-scrollbar{
-  width:8px;
-}
-
-::-webkit-scrollbar-track{
-  background:#0b0f18;
-}
-
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:#0b0f18; }
 ::-webkit-scrollbar-thumb{
   background:#2a3245;
   border-radius:20px;
 }
+::-webkit-scrollbar-thumb:hover{ background:#3a4460; }
 
-::-webkit-scrollbar-thumb:hover{
-  background:#3a4460;
-}
-
-/* Firefox */
 *{
   scrollbar-width:thin;
   scrollbar-color:#2a3245 #0b0f18;
 }
 
-/* NAV */
 .nav{
   width:420px;
   display:flex;
@@ -89,7 +75,6 @@ body{
   transform:translateY(-2px) scale(1.05);
 }
 
-/* CARD */
 .card{
   width:420px;
   padding:22px;
@@ -102,7 +87,6 @@ body{
   gap:20px;
 }
 
-/* HEADER */
 .header{
   display:flex;
   align-items:center;
@@ -129,7 +113,6 @@ body{
   color:#7fbfff;
 }
 
-/* LINKS */
 .links{
   display:flex;
   flex-direction:column;
@@ -158,7 +141,6 @@ body{
   transform:translateY(-2px) scale(1.04);
 }
 
-/* EMAIL */
 .email-btn{
   background:
     radial-gradient(180px circle at var(--x) var(--y),
@@ -170,7 +152,6 @@ body{
   opacity:.85;
 }
 
-/* Cursor glow */
 body::after{
   content:"";
   position:fixed;
@@ -184,7 +165,6 @@ body::after{
   top:var(--cy,50%);
 }
 
-/* Mobile */
 @media(max-width:480px){
   .card,.nav{width:92vw;}
 }
@@ -222,6 +202,13 @@ body::after{
        Contact via Email<br>
        <span class="email-text">doanvien909@gmail.com</span>
     </a>
+
+    <a class="link-btn email-btn"
+       href="https://forms.gle/GGchcZbtzWJpF19aA"
+       target="_blank">
+       Collaborative Questions
+    </a>
+
   </div>
 
 </div>
